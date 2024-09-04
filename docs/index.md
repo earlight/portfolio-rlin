@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "TODO: Title"
-  text: "TODO: Subtitle"
-  tagline: "TODO: Tagline"
+  name: "Richard Lin"
+  text: "Portfolio"
+  tagline: "6.1040 Prep 1"
   actions:
     - theme: brand
       text: Template Repository
