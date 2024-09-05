@@ -15,13 +15,13 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "About Me",
-        link: "/about",
-      },
-      {
         text: "Blogs",
         link: "/blogs",
       },
+      {
+        text: "About Me",
+        link: "/about",
+      }
     ],
 
     socialLinks: [{ icon: "github", link: "https://github.com/earlight" }, 
