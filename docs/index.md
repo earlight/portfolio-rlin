@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Richard Lin"
-  text: "Portfolio"
-  tagline: "6.1040 Prep 1"
+  text: "The Greatest Portfolio of All Time"
+  tagline: "6.1040 Fall 2024"
   actions:
     - theme: brand
       text: Template Repository
@@ -22,4 +22,5 @@ features:
     details: All of your assignments will be posted on your portfolio.
   - title: About Me
     details: You'll implement a small bio about yourself on here!
+    link: /about
 ---
