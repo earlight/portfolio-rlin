@@ -6,7 +6,7 @@ layout: doc
 # About Me
 
 <p align="left">
-  <img src="/Users/earlight/Desktop/MIT/-Fall 2024/6.1040/portfolio-rlin/assets/images/about-me.jpg" alt="Image" style="width:200px; float:left; margin-right:20px;">
+  <img src="./about-me.jpg" alt="Image" style="width:200px; float:left; margin-right:20px;">
 
 Yo what's good everybody, my name is **Richard Lin**, and this is the greatest About Me page of all time.
 
