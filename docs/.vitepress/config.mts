@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Richard Lin's Greatest Portfolio of All Time",
+  title: "Richard Lin's GOAT Portfolio",
   description: "6.1040 Fall 2024",
   base: "/portfolio-rlin/",
   themeConfig: {
