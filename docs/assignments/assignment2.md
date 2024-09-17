@@ -72,4 +72,4 @@ text
 
 ### 1. text
 
-![text](./assets/images/A2)
+image
