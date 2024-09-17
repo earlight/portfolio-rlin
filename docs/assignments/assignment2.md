@@ -20,7 +20,7 @@ Rely allows anyone, regardless of their tech-savviness or awareness of misinform
 ## Scrapbook of Comparables
 
 ### Twitter Community Notes
-<img src="./twitter_notes.jpg" alt="Image" style="width:300px; margin-top: 10px; margin-bottom: 10px;"/>
+<img src="./twitter-notes.jpg" alt="Image" style="width:300px; margin-top: 10px; margin-bottom: 10px;"/>
 
 This image decipts Twitter's community notes clarifying that the incident in the video is scripted, allow users to better uderstand the context that they might not otherwise be aware of. While Twitter's community notes still requires manual effort from other users to add these notes, community notes are still a good way of allowing users to verify the credibility of a social media post. An automated version of Twitter notes could be promising, allowing all posts in Rely to have credibility notes attached to them.
 
