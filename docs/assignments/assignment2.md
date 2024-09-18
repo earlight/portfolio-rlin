@@ -146,16 +146,44 @@ If a Rely user is determined to be a bot or fake account through certain telling
 
 ## VSD Analysis
 
-### 1. Stakeholders: Non-targeted Use (Prompt 4)
+### 1. Non-targeted Use (Prompt 4 of Stakeholders)
 
 - **Observation**: While many of Rely's features such as the post Rely-ability scores and user Reputation ratings are inteded to reduce misinformation and encourage creibility when posting, there could be many ways these features are used in nefarious or unintended ways. For example, users who want to maliciously target another user could intentionally give all the other users' posts a low Rely-ability score. Entire groups or organizations could also target posts from opposing viewpoints or ideologies to make them seem less reliable. Users could also use the Rely-ability score as a way to bully or harass other users.
 
 - **Design Response**: One way to combat targetted harassment could be to give more weight to users with high Reputation ratings when determining the Rely-ability scores of a post. For example, if a user has low Reputation ratings, then their comments on other posts or Rely-slider scores would have less impact on the Rely-ability score of a post. This would allow users with high Reputation ratings to have more influence on the credibility of other users, so users and groups that tend to be more hateful or unreliable would have less impact on the platform. This could create a positive reinforcement loop where users are incentivited to be more reliable not only in the content they post, but also in how they evaluate other users' content.
 
-### 
+### 2. Consider Children (Prompt 7 of Stakeholders )
+
+- **Observation**: Younger generations are a large population of today's social media users, so it will not be surprising to find young users of Rely. However, many of Rely's features such as the Rely-ability score and Reputation ratinng might be difficult for children to fully understand. As such, children may be exposted to unreliable content or users without knowing it, since they might fully understand how a low Rely-ability score or low Reputation rating could indicate that a post or user is unreliable.
+
+- **Design Response**: One way to make Rely more child-friendly and easy to understand in general could be to make the UI more intuitive for existing features. For example, the Rely-ability score, which ranges from 0 to 100, might be hard to intuitively understand for children or new users. Instead, the background of a prticular post could be shaded green or red to indicate a reliable or unreliable post, respectively. People of all ages in our society associate the color green with being correct and the color red with being wrong, so this could be a more intuitive way of indicating the reliability of a post. Similar UI modifications could be make to other things, such as a large scary warning sign for posts that have been debunked or different backgrounds on a user's profile to indicate their Reputation rating.
+
+### 3. Reappropriation (Prompt 2 of Time)
+
+- **Observation**: Not everyone might be that interested in verifying the credibility of every post they see on Rely. Perhaps instead of using the Rely-slider to rate posts based on their reliability, users may start to find it easier to simply use the Rely-slider score to rate posts based on how much they like them in general. Users may also find choosing a specific rating from 0 to 100 too hard and always opt to give a score of either 0 or 100. Overtime, the Rely-slider score may become just a more complex way of liking or disliking a post, with users not really rating the reliability of a post itself or just giving 0s and 100s.
+
+- **Design Response**: One way to prevent the reappropriation of the Rely-slider could be to incentivize users by punishing or rewarding them for accurately or inaccurately rating the reliability of a post. For example, if a user consistently gives high Rely-slider scores to posts that are later debunked, the user could lose Reputation rating, which will cause their posts to be recommended less, causing them to lose views and engagement in the long run. To address the extreme ratings of 0s or 100s, we could introduce a risk-reward incentive system where the more inaccurate or accurate a rating is, the more Reputation rating the user could lose or gain. Thus, if the user gives a 100 to an unreliable post, they could lose more Reputation rating than if they gave a lower score such as 50 to the same post.
+
+### 4. Political Realities (Prompt 2 of Pervasiveness)
+
+- **Observation**: As Rely becomes more pervasive, it is inevitable that users of differing political ideologies will use the platform to voice their political opinons. When a Rely post is an subjective opinion, especially a controversial one, it may be difficult to determine the reliability of the post from an objective point of view, since one's political beliefs heavily influence how "true" they view a subjective opinon. The same problem could arise due to different regional cultures or religious beliefs, so this obervation also may apply to prompts 3 and 5 of Pervasiveness.
+
+- **Design Response**: One way to address different opinions on Rely could be to allow users to indicate their own political or religious leanings on their profile. A Rely posts would display the poster's political or religious leanings in order to provide additional context for other users. Additionally, other users could rate posts themselves on a political or religious slider/scale, in addition to the Rely-slider. This allows users to acknowledge that a post containing subjective opinons may differ from their beliefs by rating them on political or religious sliders instead of the Rely-slider, since the Rely-slider makes more sense for objective facts and information but may not apply to subjective opinions.
+
+### 5. Value Tensions (Prompt 2 of Values)
+
+- **Observation**: While many users who use Rely would hopefully value reliability and credibility of their sources. However, there would also be users who simply want to keep up with their friends and family on social media, with the widespread adopting of Rely forcing them to move from a more traditional social media platform such as Instagram or Twitter. These users may not care as much about the reliability of the posts, and may feel uncomfortable with strangers being able to see their Reputation rating or Rely-ability scores.
+
+- **Design Response**: One way to address the value tensions between users who care about reliability and users who care about personal privacy could be to allow users to opt into having a "private" account. Private accounts would still have Reputation ratings and Rely-ability scores, but only the user themselves, as well as specific followers that they manually approve, would be able to see these scores. This is similar to how Instagram and Twitter allow users to have private accounts where only approve followers can see information about the user. Note that the Reputation ratings of private users would affect how impactful their comments and Rely-slider scores are on other (private or public) users' posts, but their Reputation rating would still not be visible to the public.
 
 ## Storyboarding and Sketching
 
-### 1. text
+### 1. User sees a post that contains misinformation.
+- If Steve sees a post with misinformation, what can he do to warn others about it?
 
-image
+<img src="./assets/images/A2/storyboards/flow-1.jpg" alt="Image" style="width:100%; margin-top: 10px; margin-bottom: 10px;"/>
+
+### 2. User is not sure if a post is reliable or not.
+- If Bobby is not sure about a post's reliability, what can he do to verify it?
+
+<img src="./assets/images/A2/storyboards/flow-2.jpg" alt="Image" style="width:100%; margin-top: 10px; margin-bottom: 10px;"/>
