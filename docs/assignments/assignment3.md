@@ -15,7 +15,7 @@ Every user on Rely also has a reliability rating that is displayed on their prof
 
 Rely's recommendation algorithm and personalized feeds also prioritize the reliability of content, ensure that misinformation and fake content is distributed less on the platform to prevent them from going viral, while also promoting and incentivizing the consistent creation of reliable content. Rely will foster a safe and trustworthy environment for users to share and consume content while also having the same social media experience they are used to, exploring entertaining content and connecting with others.
 
-## Functional Design
+## Functional Design: Concepts
 
 ### Concept 1: Authenticating
 
@@ -312,7 +312,7 @@ r in reactions
 reactions -= r
 ```
 
-### Syncronizations
+## Functional Design: Syncronizations
 
 Clarifications for syncronizations:
 
@@ -402,7 +402,7 @@ app Rely
 
 ```
 
-### Dependency Diagram
+## Functional Design: Dependency Diagram
 
 <img src="./assets/images/A3/dependency-diagram.jpg" alt="Dependency Diagram" style="width:100%; margin-top: 10px; margin-bottom: 10px;"/>
 
