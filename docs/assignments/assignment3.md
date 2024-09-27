@@ -9,7 +9,7 @@ layout: doc
 
 **Rely** is revolutionary social media platform that emphasizes reliability and misinformation prevention, allowing anyone to easily identify misinformation or fake content even when it is designed to look legitamite. This allows people who not tech-savvy enough to identify signs of misinformation to be able to easily spot when a piece of content is unreliable or fake. 
 
-Every post and comment on Rely has a reliability score that allows users to easily identify if a piece of content is fake or not. Rely takes into account the sentiment of the reactions and comments from other users, the historial reliability of the user who posted the content, third-party fact-checking, and other factors in give a holistic and accurate reliability score for each post and comment.
+Every post and comment on Rely has a reliability score that allows users to easily identify if a piece of content is fake or not. Rely takes into consideration the sentiment of the reactions and comments from other users, the historial reliability of the user who posted the content, third-party fact-checking, and other factors in give a holistic and accurate reliability score for each post and comment.
 
 Every user on Rely also has a reliability rating that is displayed on their profile, posts, and comments, allowing other users to easy spot historically untrustworthy sources. A user's reliability rating is calculated based on the reliability of their posts and comments, the reliability of users who interact with their content, historical content offenses, and other factors.
 
@@ -17,13 +17,13 @@ Rely's recommendation algorithm and personalized feeds also prioritize the relia
 
 ## Functional Design
 
-### Concept 1: User
+### Concept 1: Authenticating
 
 *\*Inspired by example given in The Essense of Software: Concept composition and sync.\**
 
 #### Purpose
 
-Authenticates users.
+Authenticates users so that app users correspond to people.
 
 #### Operational Principle
 
@@ -54,41 +54,41 @@ for user in registered:
         u := user
 ```
 
-### Concept 2: Session [Account]
+### Concept 2: Sessioning [User]
 
-^ NOT a intrinsic dependency!!!
+^ Not a intrinsic dependency
 
-("Account" is just a placeholder data type, where "Account" here does not necessarily need to be the aforementioned User concept. The Session concept does not rely on any specfic properties of "Account" and thus has no intrinsic dependencies on it.)
+("User" is just a placeholder data type, where "User" here does not necessarily need to be related to the aforementioned Authentication concept. The Sessioning concept does not rely on any specfic properties of "User" and thus has no intrinsic dependencies on it.)
 
 *\*Inspired by example given in The Essense of Software: Concept composition and sync.\**
 
 #### Purpose
 
-Allows accounts to stay authenticated for an extended period of time.
+Allows users to stay authenticated for an extended period of time.
 
 #### Operational Principle
 
-After a session strts and before it ends, the getAccount action returns the currently authenticated account that was identified at the start of the session.
+After a session strts and before it ends, the getUser action returns the currently authenticated user that was identified at the start of the session.
 
 #### State
 
 active: **set** Session
 
-account: active -> **one** Account
+user: active -> **one** User
 
 #### Actions
 
-start (a: Account, **out** s: Session)
+start (u: User, **out** s: Session)
 ```
 s not in active
 active += s
-s.account := a
+s.user := u
 ```
 
-getAccount (s: Session, **out** a: Account)
+getUser (s: Session, **out** u: User)
 ```
 s in active
-a := s.Account
+u := s.User
 ```
 
 end (s: Session)
@@ -96,42 +96,50 @@ end (s: Session)
 active -= s
 ```
 
-### Concept 3: Post [Account, Content]
+### Concept 3: Posting [User, Content]
 
-^ NOT intrinsic dependencies!!!
+^ Not intrinsic dependencies
 
-(Again, "Account" and "Content" are just placeholder data types, where their properties are not relevant to the Post concept.)
+(Again, "User" and "Content" are just placeholder data types, where their properties are not relevant to the Posting concept.)
 
 #### Purpose
 
-Allows accounts to share content. 
+Allows users to upload content.
+
+While posting is a overall generic concept, Rely would use the average/historical reliability of posts to calculate a reliability score/rating for the user, allowing other users to see how reliable they are. However, this is only relevant during implementation, so the Posting concept is kept generic.
 
 #### Operational Principle
 
-A post containing content can be created associated with an account. A post can be deleted after it is created. getAccountPosts returns all created-but-not-deleted-yet posts associated with an account.
+A post containing content can be created associated with an user. A post can be deleted after it is created. getUserPosts returns all created-but-not-deleted-yet posts associated with an user. getUser returns the user of a created-but-not-deleted-yet post.
 
 #### State
 
 posts: **set** Post
 
-account: posts -> **one** Account
+user: posts -> **one** User
 
 content: posts -> **one** Content
 
 #### Actions
 
-createPost (a: Account, c: Content, i: int, **out** p: Post)
+createPost (u: User, c: Content, i: int, **out** p: Post)
 ```
 p not in posts
 posts += p
-p.account := a
+p.user := u
 p.content := c
 ```
 
-getAccountPosts (a: Account, **out** ps: set Post)
+getUser (p: Post, **out** u: User)
+```
+p in posts
+u := p.user
+```
+
+getUserPosts (u: User, **out** ps: **set** Post)
 ```
 for post in posts:
-    if post.account == a:
+    if post.user == u:
         ps += post
 ```
 
@@ -141,23 +149,23 @@ p in posts
 posts -= p
 ```
 
-### Concept 4: Comment [Account, Content, Item]
-
-Once again, "Account", "Content", and "Item" are just placeholder data types that are not intrinsic dependencies of the Comment concept. From the implementation perspective, the "Item" data type prevents intrinsic dependencies while allowing comments to be linked to posts or other comments (or other stuff potentially).
+### Concept 4: Commenting [User, Content, Item]
 
 #### Purpose
 
-Allows users to comment on items.
+Allows users to comment on items (a generic datatype).
+
+While commenting is a overall generic concept, Rely would use sentiment analysis on comments (as well as factoring how reliable the commenter is) to get the overall reliability score of a post, allowing other users to easily see how reliable a post is at a glance. However, this is only relevant during implementation, so the Commenting concept is kept generic.
 
 #### Operational Principle
 
-A comment containing content can be created associated with an account and referencing an item. A comment can be deleted after it is created. getItemComments returns all created-but-not-deleted-yet comments that reference an item. getAccountComments returns all created-but-not-deleted-yet comments associated with an account.
+A comment containing content can be created associated with an user and referencing an item. A comment can be deleted after it is created. getItemComments returns all created-but-not-deleted-yet comments that reference an item. getUserComments returns all created-but-not-deleted-yet comments associated with an user.
 
 #### State
 
 comments: **set** Comment
 
-account: comments -> **one** Account
+user: comments -> **one** User
 
 content: comments -> **one** Content
 
@@ -165,26 +173,26 @@ item: comments -> **one** Item
 
 #### Actions
 
-createComment (a: Account, c: Content, i: Item, **out** cm: Comment)
+createComment (u: User, c: Content, i: Item, **out** cm: Comment)
 ```
 cm not in comments
 comments += cm
-cm.account := a
+cm.user := u
 cm.content := c
 cm.item := i
 ```
 
-getItemComments (i: Item, **out** cms: set Comment)
+getItemComments (i: Item, **out** cms: **set** Comment)
 ```
 for comment in comments:
     if comment.item == i:
         cms += comment
 ```
 
-getAccountComments (a: Account, **out** cms: set Comment)
+getUserComments (u: User, **out** cms: **set** Comment)
 ```
 for comment in comments:
-    if comment.account == a:
+    if comment.user == u:
         cms += comment
 ```
 
@@ -200,16 +208,20 @@ comments -= cm
 
 #### Purpose
 
-Calculates a score for an item.
+Every item has a assotiated score.
+
+Rely would associate each user/post/comment with a reliability score that would be calculated based on numerous factors, allowing users to notice at a glance if a user is historically unreliable or if a post/comment is unreliable. However, this is only relevant during implementation, so the Score concept is kept generic.
 
 #### Operational Principle
 
-A score can be created for an item with an associated value. A score can be deleted after it is created. Each item can only have one score. The value of the score can be viewed or modified after the score is created and before it is deleted.
+A score can be created for an item with an associated value. A score can be deleted after it is created. The value of the score can be viewed or modified after the score is created and before it is deleted.
 
 #### State
 
 scores: **set** Score
+
 item: scores -> **one** Item
+
 value: scores -> **one** int
 
 #### Actions
@@ -243,9 +255,81 @@ scores -= s
 
 ### Syncronizations
 
-**app** Rely
+Clarifications for syncronizations:
+
+1. "Content" is a placeholder data type. Content data type may include text/images/videos but the specific properties of the data type is not important until implementation
+
+2. DEFAULT_INITIAL_SCORE is a constant that represetns the initial reliability score/rating for users, posts, and comments when they are first created.
+
+3. I have functions *calculateReliabilityScore(item: Item, **opt** posts: **set** Post, **opt** comments: **set** Comment, **out** reliabilityScoreValue: int)* that calculates the reliability score/rating for a user, post, or comment. The reliability score is calculated using a variety of variables (e.g. a user's reliability score depends on how reliable their posts are, a post's reliability score depends on the sentiment from it's comments and the reliability score of each commenter, etc) from various concepts. While the Score concept allows reliability scores to be displayed for users, posts, and comments, the *calculateReliabilityScore()* function is only used internally to generate these scores, and is not something the user will ever interact or see with directly. Thus, calculateReliabilityScore() would not be included as an action in the Score concept and would also not be it's own concept as it is more of an app-level feature where the exact score calculating formula is only relevant during implementation and does not interact directly with the users.
+
+```
+app Rely
+    include Content
+    include Authenticating
+    include Sessioning[Authenticating.User]
+    include Posting[Sessioning.Session, Content]
+    include Commenting[Sessioning.Session, Content, Posting.Post], Commenting[Sessioning.Session, Content, Commenting.Comment]
+    include Score[Posting.Post], Score[Commenting.Comment], Score[Authenticating.User]
+
+    sync register (username: String, password: String, **out** user: User, **out** userScore: Score):
+        Authenticating.register(username, password, user)
+        Score.createScore(user, DEFAULT_INITIAL_SCORE, userScore)
+
+    sync login (username: String, password: String, **out** user: User, **out** session: Session):
+        Authenticating.authenticate(username, password, user)
+        Sessioning.start(user, session)
+
+    sync authenticate (session: Session, **out** user: User):
+        Sessioning.getUser(session, user)
+
+    sync logout (session: Session):
+        Sessioning.end(session)
+
+    sync createPost (session: Session, content: Content, **out** user: User, **out** post: Post, **out** postScore: Score):
+        when authenticate(session, user) // check if user is logged in
+        Posting.createPost(user, content, post)
+        Score.createScore(post, DEFAULT_INITIAL_SCORE, postScore)
+
+    sync deletePost (session: Session, post: Post, **out** user: User):
+        when authenticate(session, user)
+        Posting.getUser(post, user)
+        if user == post.user:
+            Posting.deletePost(post)
+    
+    sync createComment (session: Session, content: Content, item: Item, **out** user: User, **out** comment: Comment, **out** commentScore: Score):
+        when authenticate(session, user)
+        Commenting.createComment(user, content, item, comment)
+        Score.createScore(comment, DEFAULT_INITIAL_SCORE, commentScore)
+    
+    sync deleteComment (session: Session, comment: Comment, **out** user: User):
+        when authenticate(session, user)
+        Commenting.getUser(comment, user)
+        if user == comment.user:
+            Commenting.deleteComment(comment)
+    
+    // This function is run continuously in the background to update the reliability score of all users, since the user's reliability score might change due to events that may occur when they are not logged in.
+    sync updateUserScore (**out** posts: **set** Post, **out** comments: **set** Comment, **out** reliabilityScoreValue: int, **out** userScore: Score):
+        for user in Authenticating.registered:
+            Posting.getUserPosts(user, posts)
+            Commenting.getUserComments(user, comments)
+            calculateReliabilityScore(user, posts, comments, reliabilityScoreValue) // black-box app-level algorithm that is only relevant during implementation and does not interact with the user
+            Score.updateScoreValue(userScore, reliabilityScoreValue)
+    
+    // This function is run continuously in the background to update the reliability score of all posts and comments, since the post/comments's reliability score might change due to events that may occur when the corresponding is not logged in.
+    // Note that each post's score depends on its comments and each comment's score depends on it's nested comments.
+    sync updateItemScore (**out** comments: **set** Comment, **out** reliabilityScoreValue: int, **out** itemScore: Score):
+        // Update reliability score of all posts and comments
+        for item in Posting.posts + Commenting.comments:
+            getItemComments(item, comments)
+            calculateReliabilityScore(item, comments, reliabilityScoreValue) // black-box app-level algorithm that is only relevant during implementation and does not interact with the user
+            Score.updateScoreValue(itemScore, reliabilityScoreValue)
+
+```
 
 ### Dependency Diagram
+
+<img src="./assets/images/A3/dependency-diagram.jpg" alt="Dependency Diagram" style="width:100%; margin-top: 10px; margin-bottom: 10px;"/>
 
 ## Wireframes
 
