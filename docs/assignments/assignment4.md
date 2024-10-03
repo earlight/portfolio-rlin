@@ -11,9 +11,23 @@ layout: doc
 
 https://github.com/earlight/61040-backend
 
-### Deployed Service
+### Deployed Service on Vercel (Alpha Deployment)
 
-TODO
+https://61040-backend-jpceawzis-richard-lins-projects-1fac4921.vercel.app/
+
+## Fully Implemented Concepts
+
+In addition to the four default concepts, I fully implemented the Commenting and Reacting concepts:
+
+https://github.com/earlight/61040-backend/blob/945ae4f665b49a75568bdf132ffa8aa393918627/server/concepts/commenting.ts
+
+https://github.com/earlight/61040-backend/blob/945ae4f665b49a75568bdf132ffa8aa393918627/server/concepts/reacting.ts
+
+*I also implmented these concepts accordingly in app.ts, response.ts, routes.ts, and util.ts.*
+
+The design of the RESTful routes for the remaining concepts (Following, Scoring) are also outlined:
+
+https://github.com/earlight/61040-backend/blob/945ae4f665b49a75568bdf132ffa8aa393918627/server/routes.ts#L238
 
 ## Abstract Data Models
 
