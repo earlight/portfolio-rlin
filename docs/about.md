@@ -22,3 +22,15 @@ Fast forward 21 years, and here I am, a student at the Massachusetts Institute o
 My one and only interest is in software design, so 6.1040 would be the perfect place for me to learn everything there is to know about desiging software that is elegant, powerful and flexible.
 
 *Copilot provided inspiration for some parts of this About Me page.*
+
+<div style="text-align:center;">
+  <h1>FAQ</h1>
+  <h2>Q: What are your strengths?</h2>
+  <p><em>A: Everything.</em></p>
+  <h2>Q: What are your weaknesses?</h2>
+  <p><em>A: Nothing.</em></p>
+</div>
+
+<footer>
+  <p>Questions? E-mail me at <a href="mailto:rwlny@mit.edu">rwlny@mit.edu</a></p>
+</footer>
