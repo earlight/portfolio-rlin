@@ -1,9 +1,9 @@
 ---
-title: Lecture 13 Blog - Design that Matters
+title: Lecture 15 Blog - Design that Matters
 layout: doc
 ---
 
-# Lecture 13 Blog - Design that Matters
+# Lecture 15 Blog - Design that Matters
 
 ## Responsible Innovation in Artificial Intelligence
 
