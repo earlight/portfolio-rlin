@@ -271,3 +271,5 @@ Together, these metrics will illustrate whether ReCycle has effectively addresse
 ## Pitch
 
 Our slides will be in a seperate submission.
+
+*Note: The assistance of ChatGPT was used for some of the inspiration.*
