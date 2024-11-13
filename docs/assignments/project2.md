@@ -246,3 +246,5 @@ Tony’s friends want him to recycle more, but Tony hates the environment and do
 #### Notes on Brittleness/Unclear Areas
 - How to promote recycling with leaderboards without promoting increased waste?
 - Have a global leader or just show friends?
+
+\**Note: The assistance of ChatGPT was used for some of the inspiration.*\*
