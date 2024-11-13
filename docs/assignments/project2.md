@@ -35,7 +35,7 @@ Scrapp’s personal recycle history/progress tracking feature allows users to se
 Yelp’s map of the nearest restaurants lets users quickly locate nearby dining options, enhancing convenience by visually displaying choices based on proximity. For ReCycle, a similar map feature could show the locations of nearby recycling bins, drop-off points, or waste sorting facilities, making it easier for users to find proper disposal sites in their area. This could be particularly helpful for items that require specialized recycling, such as electronics or hazardous materials, as well as places where recycling bins may not be as common or easily found.
 
 ### Shazam Song Identification
-<img src="./assets/images/P2/scrapbook/shazam.png" alt="Image" style="width: 40%; margin-top: 10px; margin-bottom: 10px;"/>
+<img src="./assets/images/P2/scrapbook/shazam-music.png" alt="Image" style="width: 40%; margin-top: 10px; margin-bottom: 10px;"/>
 
 Shazam uses audio recognition to identify songs by analyzing and matching sound patterns. Similarly, ReCycle could use image recognition via the camera to identify waste items, helping users determine the correct recycling bin. Both apps simplify decision-making by providing a quick, intuitive solution to identify something specific—in ReCycle's case, which bin to use for disposal. This parallel could inspire ReCycle's interface design, focusing on a user-friendly way to capture and classify items with minimal steps.
 
