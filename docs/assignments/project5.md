@@ -5,6 +5,20 @@ layout: doc
 
 # Project Phase 5 - Beta Release
 
+## Important Links
+
+### Frontend Code Repository
+
+https://github.com/aschueppert/ReCycle
+
+### Deployed Service on Vercel
+
+NOTE: The website will ask you to enable your camera and location.
+
+https://re-cycle-pi.vercel.app/
+
+https://recycle-git-main-amelia-schuepperts-projects.vercel.app/
+
 ## Design Revisions
 
 **Removing Daily Streaks**: After evaluating the integration of daily streaks, we determined that they did not align well with our app's other motivational features. Streaks are typically effective for habit-forming apps but felt redundant given our robust scoring, leaderboards, and cosmetic rewards systems, which already drive user engagement and reinforce recycling habits. By focusing on these alternative motivational mechanisms, we avoid unnecessary overlap and ensure a streamlined user experience.
