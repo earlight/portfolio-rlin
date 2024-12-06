@@ -11,9 +11,11 @@ layout: doc
 
 https://github.com/aschueppert/ReCycle
 
+*Note*: Don't use the deployment link from the github repo, please use the link(s) below.
+
 ### Deployed Service on Vercel
 
-NOTE: The website will ask you to enable your camera and location.
+*Note*: The website will ask you to enable your camera and location.
 
 https://re-cycle-pi.vercel.app/
 
@@ -37,3 +39,5 @@ https://recycle-git-main-amelia-schuepperts-projects.vercel.app/
 | Bin adding       | Find three recycling bins near your location and add them to the map.              | Our app will rely on crowdsourcing information for the location of trash and recycling bins, as that is not something we/developers can personally maintain. So the process of adding a bin needs to be simple enough for users to continue to do so. This test assesses whether the process of adding is simple for a new user, but more importantly looks for whether the process is pleasant enough for a user to continue to do many times over. This emotional aspect is why this user test is necessary. |
 | Gaming           | Try to get enough points to reach the leaderboard podium!                          | Not only do we need to make sure our app is usable, but we also need to ensure our app gamifies recycling enough to promote the practice. This test serves two purposes: 1) making sure a user understands how to get points after executing the previous tests and 2) seeing if the process of competing on a leaderboard is exciting for the user. The second point makes this test especially important because new users need to want to use the app, which is an evaluation that merely walking through the app will not reveal. |
 | Cosmetics        | Grow a few plants and arrange your garden as you want to.                          | Cosmetics are the primary usage of points, so users need to both know how to and want to purchase them. Similar to the previous test, this assesses whether the process of plants and cosmetics are intuitive enough for a new user to pick up on. In addition, as with the previous test, this test looks for whether the cosmetic purchase system is enjoyable to the user and would entice them to use our app. Again, this second point is why this is an important user test, because it requires the input of a new user. |
+
+\**Note: The assistance of ChatGPT was used for some of the inspiration.*\*
